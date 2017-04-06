@@ -104,4 +104,8 @@ export default class Vector2 {
       this.y
     ];
   }
+
+  public isEqual(v: Vector2): boolean {
+    return this.x === v.x && this.y === v.y;
+  }
 }

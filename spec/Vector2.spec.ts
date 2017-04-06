@@ -2,7 +2,7 @@
 import Vector2 from '../src/lib/Vector2';
 
 describe('Vector2', () => {
-  let sut;
+  let sut: Vector2;
 
   describe('#constructor', () => {
     beforeEach(() => {
@@ -14,11 +14,11 @@ describe('Vector2', () => {
     });
 
     it('should set x to 2', () => {
-      expect(sut.x).toBe(2);
+      expect(sut.x).toEqual(2);
     });
 
     it('should set y to 3', () => {
-      expect(sut.y).toBe(3);
+      expect(sut.y).toEqual(3);
     });
   });
 
@@ -33,8 +33,8 @@ describe('Vector2', () => {
 
     it('should add correctly', () => {
       sut.add(new Vector2(3, 3));
-      expect(sut.x).toBe(3);
-      expect(sut.y).toBe(3);
+      expect(sut.x).toEqual(3);
+      expect(sut.y).toEqual(3);
     });
   });
 
@@ -66,8 +66,8 @@ describe('Vector2', () => {
 
     it('it should divide correctly', () => {
       sut.div(2);
-      expect(sut.x).toBe(1);
-      expect(sut.y).toBe(1);
+      expect(sut.x).toEqual(1);
+      expect(sut.y).toEqual(1);
     });
   });
 
@@ -82,8 +82,8 @@ describe('Vector2', () => {
 
     it('it should divide correctly', () => {
       sut.mult(2);
-      expect(sut.x).toBe(4);
-      expect(sut.y).toBe(4);
+      expect(sut.x).toEqual(4);
+      expect(sut.y).toEqual(4);
     });
   });
 
@@ -97,7 +97,7 @@ describe('Vector2', () => {
     });
 
     it('should give the correct magnitude of the vector', () => {
-      expect(sut.mag()).toBe(5);
+      expect(sut.mag()).toEqual(5);
     });
   });
 
@@ -149,13 +149,13 @@ describe('Vector2', () => {
     });
 
     it('it should return a copy', () => {
-      let copy = sut.copy();
-      expect(copy.x).toBe(sut.x);
-      expect(copy.y).toBe(sut.y);
+      let copy: Vector2 = sut.copy();
+      expect(copy.x).toEqual(sut.x);
+      expect(copy.y).toEqual(sut.y);
     });
 
     it('it should not be the same object', () => {
-      let copy = sut.copy();
+      let copy: Vector2 = sut.copy();
       expect(copy).not.toBe(sut);
     });
   });
@@ -170,9 +170,9 @@ describe('Vector2', () => {
     });
 
     it('it should return an array with the same x and y values', () => {
-      let copy = sut.toArray();
-      expect(copy[0]).toBe(sut.x);
-      expect(copy[1]).toBe(sut.y);
+      let copy: number[] = sut.toArray();
+      expect(copy[0]).toEqual(sut.x);
+      expect(copy[1]).toEqual(sut.y);
     });
   });
 
@@ -186,8 +186,8 @@ describe('Vector2', () => {
     });
 
     it('should return the correct distance', () => {
-      let actual = sut.dist(new Vector2(3, 4));
-      let expected = 5;
+      let actual: number = sut.dist(new Vector2(3, 4));
+      let expected: number = 5;
       expect(actual).toEqual(expected);
     });
   });
@@ -202,8 +202,8 @@ describe('Vector2', () => {
     });
 
     it('should return the correct dot product', () => {
-      let actual = sut.dot(new Vector2(2, 3));
-      expect(actual).toBe(13);
+      let actual: number = sut.dot(new Vector2(2, 3));
+      expect(actual).toEqual(13);
     });
   });
 
@@ -217,8 +217,8 @@ describe('Vector2', () => {
     });
 
     it('should return the correct cross product', () => {
-      let actual = sut.cross(new Vector2(2, 3));
-      expect(actual).toBe(9);
+      let actual: number = sut.cross(new Vector2(2, 3));
+      expect(actual).toEqual(9);
     });
   });
 
@@ -233,8 +233,8 @@ describe('Vector2', () => {
 
     it('should return the correct cross product', () => {
       sut.random();
-      expect(sut.x).not.toBe(5);
-      expect(sut.y).not.toBe(2);
+      expect(sut.x).not.toEqual(5);
+      expect(sut.y).not.toEqual(2);
     });
 
     it('should return values less than 1 for each component of the vector', () => {
@@ -255,8 +255,8 @@ describe('Vector2', () => {
 
     it('should update the vectors components', () => {
       sut.normalise();
-      expect(sut.x).not.toBe(3);
-      expect(sut.y).not.toBe(4);
+      expect(sut.x).not.toEqual(3);
+      expect(sut.y).not.toEqual(4);
     });
 
     it('should return values less than 1 for each component of the vector', () => {
@@ -267,8 +267,30 @@ describe('Vector2', () => {
 
     it('should set the magnitude to a unit vector', () => {
       sut.normalise();
-      let actual = sut.mag();
-      expect(actual).toBe(1);
+      let actual: number = sut.mag();
+      expect(actual).toEqual(1);
+    });
+  });
+
+  describe('#isEqual', () => {
+    beforeEach(() => {
+      sut = new Vector2(5, 5);
+    });
+
+    it('should be defined', () => {
+      expect(sut.isEqual).toBeDefined();
+    });
+
+    it('should be true when both vectors are equal', () => {
+      let v: Vector2 = new Vector2(5, 5);
+      expect(v.x).toEqual(sut.x);
+      expect(v.y).toEqual(sut.y);
+    });
+
+    it('should be false when both vectors are not equal', () => {
+      let v: Vector2 = new Vector2(2, 1);
+      expect(v.x).not.toEqual(sut.x);
+      expect(v.y).not.toEqual(sut.y);
     });
   });
 

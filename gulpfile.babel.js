@@ -23,7 +23,7 @@ class Build {
 
   tests() {
     gulp.task('spec', shell.task([
-      'jasmine spec/*.spec.ts'
+      'jasmine spec/*.spec.js'
     ]));
   }
 
