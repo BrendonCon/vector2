@@ -294,6 +294,37 @@ describe('Vector2', () => {
     });
   });
 
+  describe('#zero', () => {
+    beforeEach(() => {
+      sut = new Vector2(5, 5);
+    });
+
+    it('should be defined', () => {
+      expect(sut.zero).toBeDefined();
+    });
+
+    it('should zero each vectors component', () => {
+      sut.zero();
+      expect(sut.x).toEqual(0);
+      expect(sut.y).toEqual(0);
+    });
+  });
+
+  describe('#magSq', () => {
+    beforeEach(() => {
+      sut = new Vector2(3, 4);
+    });
+
+    it('should be defined', () => {
+      expect(sut.magSq).toBeDefined();
+    });
+
+    it('should zero each vectors component', () => {
+      let magSq = sut.magSq();
+      expect(magSq).toEqual(25);
+    });
+  });
+
   describe('#setAngle', () => {
     beforeEach(() => {
       sut = new Vector2(2, 2);
