@@ -1,0 +1,7 @@
+*.map
+*.log
+dist
+node_modules
+src/**/*.js
+gulp/**/*.js
+spec/**/*.js

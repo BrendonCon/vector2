@@ -1,0 +1,17 @@
+language: node_js
+
+node_js:
+  - "6"
+
+install:
+  - npm i
+
+script: 
+  - gulp html
+  - gulp typescript
+  - gulp spec
+  - gulp dist
+
+notifications:
+  email:
+    on_failure: always

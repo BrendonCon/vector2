@@ -1,0 +1,37 @@
+{
+  "name": "vector2",
+  "version": "0.0.1",
+  "description": "A 2d vector class for games and physics simulations",
+  "main": "dist/lib/Vector2.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jasmine spec/Vector2.spec.ts",
+    "build": "tsc src/**/*.ts spec/*.spec.ts gulp/**/*.ts --target ES5 --module UMD",
+    "dev": "tsc src/lib/Vector2.ts spec/Vector2.spec.ts -w --target ES5 --module UMD",
+    "tsc": "tsc",
+    "postinstall": "gulp build && gulp dist"
+  },
+  "keywords": [
+    "physics",
+    "math",
+    "games",
+    "vector2d",
+    "vector2",
+    "vector",
+    "2d"
+  ],
+  "author": "Brendon Conradie <brendoncon@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jasmine": "^2.5.47",
+    "typings": "^2.1.0",
+    "babel-preset-es2015": "^6.24.0",
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.6.3",
+    "typescript": "^2.2.2",
+    "jasmine-es6": "^0.4.0"
+  },
+  "dependencies": {}
+}
