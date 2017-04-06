@@ -1,17 +1,17 @@
-![Build Status](https://travis-ci.org/BrendonCon/es2015-jasmine-sandbox.svg?branch=master)
-![devDependencies](https://david-dm.org/BrendonCon/es2015-jasmine-sandbox/dev-status.svg?style=flat})
+![Build Status](https://travis-ci.org/BrendonCon/vector2.svg?branch=master)
+![devDependencies](https://david-dm.org/BrendonCon/vector2/dev-status.svg?style=flat})
 ![docs](https://readthedocs.org/projects/pip/badge/?version=update)
 
 # Vector2 
 
 ## Description
-A vector 2d class for simulations and games. This class is written in TypeScript and compiled out to a [UMD]() module wrapped for easy consumption. Inspired by [Unity]() and [Processings]() [Vector]() and [PVector]() classes respectively.
+A vector 2d class for simulations and games. This class is written in TypeScript and compiled out to a [UMD]() module wrapped for easy consumption. Inspired by [Unity](https://unity3d.com/) and [Processings](https://processing.org/) [Vector](https://docs.unity3d.com/ScriptReference/Vector2.html) and [PVector](https://processing.org/reference/PVector.html) classes respectively.
 
 ## Install
 Clone this repo and run `npm i`. A postinstall script will build the files in the [src](src) and [dist](dist) folders. 
 
 ## Usage
-This package is wrapped in a [UMD]() wrapper ready for consumption by most common module types. See below for implementations:
+This package is wrapped in a [UMD](https://github.com/umdjs/umd) wrapper ready for consumption by most common module types. See below for implementations:
 
 ```JavaScript
 // ES2015
@@ -33,13 +33,13 @@ Run `gulp dev` to run the file watchers. You can edit and change [vector2](src/l
 
 ## Node Dependencies
 As per usual you can find the dependencies in the [package.json](package.json). They are listed below for ease of use:
-- [gulp](): build system magic
-- [gulp-shell](): execute command line statements in gulp
-- [typescript](): TypeScript compiler
-- [typings](): TypeScript type definition system
-- [jasmine-es6](): Jasmine for unit tests in ES6
-- [@types/jasmine](): type definition for Jasmine
-- [babel](): for compiling JavaScript
+- [gulp](https://www.npmjs.com/package/gulp): build system magic
+- [gulp-shell](https://www.npmjs.com/package/gulp-shell): execute command line statements in gulp
+- [typescript](https://www.typescriptlang.org/): TypeScript compiler
+- [typings](https://www.npmjs.com/package/typings): TypeScript type definition system
+- [jasmine-es6](https://www.npmjs.com/package/jasmine-es6): Jasmine for unit tests in ES6
+- [@types/jasmine](https://www.npmjs.com/package/@types/jasmine): type definition for Jasmine
+- [babel](https://babeljs.io/): for compiling JavaScript
 
 ## Gulp Tasks
 The build system makes of use of gulp on node. You can find all the build tasks in the [gulpfile](gulp.babel.js). Below find a listing of the tasks available from the command line:

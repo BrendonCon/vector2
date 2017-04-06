@@ -50,6 +50,10 @@ export default class Vector2 {
     return Math.sqrt(this.x * this.x + this.y * this.y);
   }
 
+  public magSq(): number {
+    return this.x * this.x + this.y * this.y;
+  }
+
   public dist(v: Vector2): number {
     let distX: number = Math.pow(v.x - this.x, 2);
     let distY: number = Math.pow(v.y - this.y, 2);
@@ -103,5 +107,14 @@ export default class Vector2 {
       this.x,
       this.y
     ];
+  }
+
+  public isEqual(v: Vector2): boolean {
+    return this.x === v.x && this.y === v.y;
+  }
+
+  public zero(): void {
+    this.x = 0;
+    this.y = 0;
   }
 }
