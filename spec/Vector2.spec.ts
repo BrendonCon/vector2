@@ -176,6 +176,37 @@ describe('Vector2', () => {
     });
   });
 
+  describe('#toString', () => {
+    beforeEach(() => {
+      sut = new Vector2(20, 20);
+    });
+
+    it('should be defined', () => {
+      expect(sut.toString).toBeDefined();
+    });
+
+    it('it should return a string representation of the vectors components', () => {
+      let v: string = sut.toString();
+      expect(v).toEqual(`(20, 20)`);
+    });
+  });
+
+  describe('#abs', () => {
+    beforeEach(() => {
+      sut = new Vector2(-20, -20);
+    });
+
+    it('should be defined', () => {
+      expect(sut.abs).toBeDefined();
+    });
+
+    it('should convert stored values to absolute values', () => {
+      sut.abs();
+      expect(sut.x).toEqual(20);
+      expect(sut.y).toEqual(20);
+    });
+  });
+
   describe('#dist', () => {
     beforeEach(() => {
       sut = new Vector2(0, 0);
@@ -282,15 +313,13 @@ describe('Vector2', () => {
     });
 
     it('should be true when both vectors are equal', () => {
-      let v: Vector2 = new Vector2(5, 5);
-      expect(v.x).toEqual(sut.x);
-      expect(v.y).toEqual(sut.y);
+      let actual: boolean = sut.isEqual(new Vector2(5, 5));
+      expect(actual).toBeTruthy();
     });
 
     it('should be false when both vectors are not equal', () => {
-      let v: Vector2 = new Vector2(2, 1);
-      expect(v.x).not.toEqual(sut.x);
-      expect(v.y).not.toEqual(sut.y);
+      let actual: boolean = sut.isEqual(new Vector2(2, 1));
+      expect(actual).toBeFalsy();
     });
   });
 
@@ -319,7 +348,7 @@ describe('Vector2', () => {
       expect(sut.magSq).toBeDefined();
     });
 
-    it('should zero each vectors component', () => {
+    it('should square the magnitude', () => {
       let magSq = sut.magSq();
       expect(magSq).toEqual(25);
     });
