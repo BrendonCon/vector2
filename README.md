@@ -42,7 +42,7 @@ As per usual you can find the dependencies in the [package.json](package.json). 
 - [babel](https://babeljs.io/): for compiling JavaScript
 
 ## Gulp Tasks
-The build system makes of use of gulp on node. You can find all the build tasks in the [gulpfile](gulp.babel.js). Below find a listing of the tasks available from the command line:
+The build system makes of use of gulp on node. You can find all the build tasks in the [gulpfile](gulpfile.babel.js). Below find a listing of the tasks available from the command line:
 - `gulp default`: runs the `gulp dev` task
 - `gulp html`: moves [HTML](src) files from the [src](src) to te [dist](dist) folder
 - `gulp spec`: executes Jasmine and runs the [unit tests](spec)

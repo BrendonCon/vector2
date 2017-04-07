@@ -109,6 +109,10 @@ export default class Vector2 {
     ];
   }
 
+  public toString(): string {
+    return `(${this.x}, ${this.y})`;
+  }
+
   public isEqual(v: Vector2): boolean {
     return this.x === v.x && this.y === v.y;
   }
@@ -117,4 +121,10 @@ export default class Vector2 {
     this.x = 0;
     this.y = 0;
   }
+
+  public abs(): void {
+    this.x = Math.abs(this.x);
+    this.y = Math.abs(this.y);
+  }
+
 }

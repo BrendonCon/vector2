@@ -1,4 +1,3 @@
-
 import gulp from 'gulp';
 import shell from 'gulp-shell';
 
@@ -67,7 +66,7 @@ class Build {
     gulp.task('watch', () => {
       gulp.watch('src/**/*.html', ['html']);
       gulp.watch('**/*.ts', ['typescript']);
-      gulp.watch('spec/**/*.spec.ts', ['spec']);
+      gulp.watch(['spec/**/*.spec.ts', 'src/**/*.js'], ['spec']);
     });
   }
 }
