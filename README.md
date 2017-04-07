@@ -21,7 +21,37 @@ import Vector2 from 'vector2';
 const Vector2 = require('vector2');
 ```
 
-Run `gulp dev` to run the file watchers. You can edit and change [vector2](src/lib/Vector2.ts) and have the watchers execute the typescript task. When you are done editing you will need to package this for distribution by running the `gulp dist` task. 
+Run `gulp dev` to run the file watchers. You can edit and change [Vector2](src/lib/Vector2.ts) and have the watchers execute the typescript task. When you are done editing you will need to package this for distribution by running the `gulp dist` task. 
+
+When using the [Vector2](src/lib/Vector2.ts) class, you will have the following methods and properties exposed for use:
+
+
+| Vector2       |
+|:-------------|
+| x: number     |
+| y: number     |
+| constructor(x: number, y: number) |
+| set(x: number, y: number): void |
+| limit(maxX: number, maxY: number): void |
+| add(v: Vector2): void|
+| sub(v: Vector2): void |
+| mult(scalar: number): void|
+| div(divisor: number): void|
+| cross(v: Vector2): number |
+| dot(v: Vector2): number |
+| dist(v: Vector2): number |
+| getAngle(): number |
+| setAngle(angle: number): number |
+| mag(): number |
+| magSq(): number |
+| normalise(): void |
+| random(): void |
+| copy(): Vector2 |
+| toArray(): number[] |
+| toString(): string |
+| isEqual(v: Vector2): boolean |
+| zero(): void |
+| abs(): void |
 
 ## Folder Structure
 - [.vscode](.vscode): Visual Studio Code configs here
