@@ -66,7 +66,7 @@ class Build {
     gulp.task('watch', () => {
       gulp.watch('src/**/*.html', ['html']);
       gulp.watch('**/*.ts', ['typescript']);
-      gulp.watch(['spec/**/*.spec.ts', 'src/**/*.js'], ['spec']);
+      gulp.watch(['spec/**/*.spec.ts'], ['spec']);
     });
   }
 }

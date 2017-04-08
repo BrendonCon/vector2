@@ -41,9 +41,9 @@ export default class Vector2 {
     this.y *= scalar;
   }
 
-  public div(scalar: number): void {
-    this.x /= scalar;
-    this.y /= scalar;
+  public div(divisor: number): void {
+    this.x /= divisor;
+    this.y /= divisor;
   }
 
   public mag(): number {
@@ -88,9 +88,9 @@ export default class Vector2 {
     this.y = y;
   }
 
-  public limit(limitX: number, limitY: number = limitX): void {
-    this.x = Math.min(this.x, limitX);
-    this.y = Math.min(this.y, limitY);
+  public limit(maxX: number, maxY: number = maxX): void {
+    this.x = Math.min(this.x, maxX);
+    this.y = Math.min(this.y, maxY);
   }
 
   public random(): void {
