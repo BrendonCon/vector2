@@ -70,7 +70,7 @@ export default class Vector2 {
     return Math.atan2(this.y, this.x);
   }
 
-  public normalise(): void {
+  public normalize(): void {
     let mag: number = this.mag();
     this.div(mag);
   }
