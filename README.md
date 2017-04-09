@@ -1,14 +1,14 @@
 ![Build Status](https://travis-ci.org/BrendonCon/vector2.svg?branch=master)
 ![devDependencies](https://david-dm.org/BrendonCon/vector2/dev-status.svg?style=flat})
-![docs](https://readthedocs.org/projects/pip/badge/?version=update)
+![docs](https://readthedocs.org/projects/pip/badge/?version=latest)
 
 # Vector2 
 
 ## Description
-A vector 2d class for simulations and games. This class is written in TypeScript and compiled out to a [UMD]() module wrapped for easy consumption. Inspired by [Unity](https://unity3d.com/) and [Processings](https://processing.org/) [Vector](https://docs.unity3d.com/ScriptReference/Vector2.html) and [PVector](https://processing.org/reference/PVector.html) classes respectively.
+A [Vector](https://www.google.co.za/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=what+is+a+vector) 2D class for simulations and games. This class is written in [TypeScript](https://www.typescriptlang.org/) and compiled out to a [UMD]() module wrapped for easy consumption. Inspired by [Unity](https://unity3d.com/) and [Processings](https://processing.org/) [Vector](https://docs.unity3d.com/ScriptReference/Vector2.html) and [PVector](https://processing.org/reference/PVector.html) classes respectively.
 
 ## Install
-Clone this repo and run `npm i`. A postinstall script will build the files in the [src](src) and [dist](dist) folders. 
+Clone this repo and run `npm i`. A [postinstall](https://docs.npmjs.com/misc/scripts) script will build the files in the [src](src) and [dist](dist) folders. 
 
 ## Usage
 This package is wrapped in a [UMD](https://github.com/umdjs/umd) wrapper ready for consumption by most common module types. See below for implementations:
@@ -17,7 +17,7 @@ This package is wrapped in a [UMD](https://github.com/umdjs/umd) wrapper ready f
 // ES2015
 import Vector2 from 'vector2';
 
-// Node/CommonJS
+// CommonJS
 const Vector2 = require('vector2');
 ```
 
@@ -25,33 +25,33 @@ Run `gulp dev` to run the file watchers. You can edit and change [Vector2](src/l
 
 When using the [Vector2](src/lib/Vector2.ts) class, you will have the following methods and properties exposed for use:
 
-
-| Vector2       |
+| Vector2 |
 |:-------------|
-| x: number     |
-| y: number     |
+| x: *number*     |
+| y: *number*     |
 | constructor(x: number, y: number) |
-| set(x: number, y: number): void |
-| limit(maxX: number, maxY: number): void |
-| add(v: Vector2): void|
-| sub(v: Vector2): void |
-| mult(scalar: number): void|
-| div(divisor: number): void|
-| cross(v: Vector2): number |
-| dot(v: Vector2): number |
-| dist(v: Vector2): number |
-| getAngle(): number |
-| setAngle(angle: number): number |
-| mag(): number |
-| magSq(): number |
-| normalise(): void |
-| random(): void |
-| copy(): Vector2 |
-| toArray(): number[] |
-| toString(): string |
-| isEqual(v: Vector2): boolean |
-| zero(): void |
-| abs(): void |
+| set(x: number, y: number): *void* |
+| limit(maxX: number, maxY: number): *void* |
+| add(v: Vector2): *void* |
+| sub(v: Vector2): *void* |
+| mult(scalar: number): *void* |
+| div(divisor: number): *void* |
+| cross(v: Vector2): *number* |
+| dot(v: Vector2): *number* |
+| dist(v: Vector2): *number* |
+| getAngle(): *number* |
+| setAngle(angle: number): *number* |
+| mag(): *number* |
+| magSq(): *number* |
+| normalize(): *void* |
+| random(): *void* |
+| copy(): *Vector2* |
+| toArray(): *number[]* |
+| toString(): *string* |
+| isEqual(v: Vector2): *boolean* |
+| zero(): *void* |
+| abs(): *void* |
+| |
 
 ## Folder Structure
 - [.vscode](.vscode): Visual Studio Code configs here

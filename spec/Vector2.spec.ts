@@ -11,6 +11,7 @@ describe('Vector2', () => {
 
     it('should be defined', () => {
       expect(sut).toBeDefined();
+      expect(sut).not.toBeNull();
     });
 
     it('should set x to 2', () => {
@@ -29,6 +30,7 @@ describe('Vector2', () => {
 
     it('should be defined', () => {
       expect(sut.add).toBeDefined();
+      expect(sut.add).not.toBeNull();
     });
 
     it('should add correctly', () => {
@@ -275,29 +277,29 @@ describe('Vector2', () => {
     });
   });
 
-  describe('#normalise', () => {
+  describe('#normalize', () => {
     beforeEach(() => {
       sut = new Vector2(3, 4);
     });
 
     it('should be defined', () => {
-      expect(sut.normalise).toBeDefined();
+      expect(sut.normalize).toBeDefined();
     });
 
     it('should update the vectors components', () => {
-      sut.normalise();
+      sut.normalize();
       expect(sut.x).not.toEqual(3);
       expect(sut.y).not.toEqual(4);
     });
 
     it('should return values less than 1 for each component of the vector', () => {
-      sut.normalise();
+      sut.normalize();
       expect(sut.x).toBeLessThan(1);
       expect(sut.y).toBeLessThan(1);
     });
 
     it('should set the magnitude to a unit vector', () => {
-      sut.normalise();
+      sut.normalize();
       let actual: number = sut.mag();
       expect(actual).toEqual(1);
     });
@@ -356,7 +358,7 @@ describe('Vector2', () => {
 
   describe('#setAngle', () => {
     beforeEach(() => {
-      sut = new Vector2(2, 2);
+      sut = new Vector2(3, 4);
     });
 
     it('should be defined', () => {
@@ -364,13 +366,15 @@ describe('Vector2', () => {
     });
 
     it('should set the angle', () => {
-      // pending('to be implemented');
+      sut.setAngle(0.927);
+      expect(sut.x).toBeCloseTo(3);
+      expect(sut.y).toBeCloseTo(4);
     });
   });
 
   describe('#getAngle', () => {
     beforeEach(() => {
-      sut = new Vector2(2, 2);
+      sut = new Vector2(3, 4);
     });
 
     it('should be defined', () => {
@@ -378,7 +382,8 @@ describe('Vector2', () => {
     });
 
     it('should get the angle', () => {
-      // pending('to be implemented');
+      let actual: number = sut.getAngle();
+      expect(actual).toBeCloseTo(0.927);
     });
   });
 });
