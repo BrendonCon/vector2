@@ -3,36 +3,36 @@ import shell from 'gulp-shell';
 
 class Build {
   constructor() {
-    this.html();
-    this.typescript();
-    this.tests();
-    this.watch();
-    this.build();
-    this.dist();
-    this.dev();
-    this.default();
+    this._html();
+    this._typescript();
+    this._tests();
+    this._watch();
+    this._build();
+    this._dist();
+    this._dev();
+    this._default();
   }
 
-  html() {
+  _html() {
     gulp.task('html', () => {
       gulp.src('src/**/*.html')
         .pipe(gulp.dest('dist'));
     });
   }
 
-  tests() {
-    gulp.task('spec', shell.task([
+  _tests() {
+    gulp.task('spec', ['typescript'], shell.task([
       'jasmine spec/*.spec.js'
     ]));
   }
 
-  typescript() {
+  _typescript() {
     gulp.task('typescript', shell.task([
       'tsc'
     ]));
   }
 
-  build() {
+  _build() {
     gulp.task('build', [
       'html',
       'typescript',
@@ -40,14 +40,14 @@ class Build {
     ]);
   }
 
-  dist() {
+  _dist() {
     gulp.task('dist', () => {
       gulp.src('src/lib/*.js')
         .pipe(gulp.dest('dist/lib/'));
     });
   }
 
-  dev() {
+  _dev() {
     gulp.task('dev', [
       'html',
       'typescript',
@@ -56,17 +56,17 @@ class Build {
     ]);
   }
 
-  default() {
+  _default() {
     gulp.task('default', [
       'dev'
     ]);
   }
 
-  watch() {
+  _watch() {
     gulp.task('watch', () => {
       gulp.watch('src/**/*.html', ['html']);
       gulp.watch('**/*.ts', ['typescript']);
-      gulp.watch(['spec/**/*.spec.ts'], ['spec']);
+      gulp.watch(['spec/**/*.spec.ts', 'src/**/*.ts'], ['spec']);
     });
   }
 }

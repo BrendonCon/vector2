@@ -17,7 +17,7 @@ This package is wrapped in a [UMD](https://github.com/umdjs/umd) wrapper ready f
 // ES2015
 import Vector2 from 'vector2';
 
-// Node/CommonJS
+// CommonJS
 const Vector2 = require('vector2');
 ```
 
