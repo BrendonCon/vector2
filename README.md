@@ -1,6 +1,6 @@
 ![Build Status](https://travis-ci.org/BrendonCon/vector2.svg?branch=master)
 ![devDependencies](https://david-dm.org/BrendonCon/vector2/dev-status.svg?style=flat})
-![docs](https://readthedocs.org/projects/pip/badge/?version=update)
+![docs](https://readthedocs.org/projects/pip/badge/?version=latest)
 
 # Vector2 
 

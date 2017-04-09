@@ -358,7 +358,7 @@ describe('Vector2', () => {
 
   describe('#setAngle', () => {
     beforeEach(() => {
-      sut = new Vector2(2, 2);
+      sut = new Vector2(3, 4);
     });
 
     it('should be defined', () => {
@@ -366,13 +366,15 @@ describe('Vector2', () => {
     });
 
     it('should set the angle', () => {
-      // pending('to be implemented');
+      sut.setAngle(0.927);
+      expect(sut.x).toBeCloseTo(3);
+      expect(sut.y).toBeCloseTo(4);
     });
   });
 
   describe('#getAngle', () => {
     beforeEach(() => {
-      sut = new Vector2(2, 2);
+      sut = new Vector2(3, 4);
     });
 
     it('should be defined', () => {
@@ -380,7 +382,8 @@ describe('Vector2', () => {
     });
 
     it('should get the angle', () => {
-      // pending('to be implemented');
+      let actual: number = sut.getAngle();
+      expect(actual).toBeCloseTo(0.927);
     });
   });
 });
