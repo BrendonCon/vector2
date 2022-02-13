@@ -146,4 +146,8 @@ export default class Vec2 implements Vec {
   public static down(): Vec2 {
     return new Vec2(0, 1);
   }
+
+  public static zero(): Vec2 {
+    return new Vec2(0, 0);
+  }
 }

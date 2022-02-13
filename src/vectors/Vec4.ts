@@ -98,8 +98,7 @@ export default class Vec4 implements Vec {
   }
 
   public normalize(): void {
-    let mag: number = this.mag();
-    this.div(mag);
+    this.div(this.mag());
   }
 
   public dot(v: Vec4): number {
@@ -140,7 +139,7 @@ export default class Vec4 implements Vec {
   }
 
   public toString(): string {
-    return `(x: ${this.x}, y: ${this.y}), z: ${this.z}, w: ${this.w}`;
+    return `(x: ${this.x}, y: ${this.y}), z: ${this.z}, w: ${this.w})`;
   }
 
   public isEqual(v: Vec4): boolean {
@@ -189,5 +188,9 @@ export default class Vec4 implements Vec {
 
   public static down(): Vec4 {
     return new Vec4(0, 1, 0, 0);
+  }
+
+  public static zero(): Vec4 {
+    return new Vec4(0, 0, 0, 0);
   }
 }

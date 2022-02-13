@@ -1,5 +1,3 @@
-import Vector from "../Vector";
-
 export default class Vec3 implements Vec {
   private _x: number = 0;
 
@@ -70,9 +68,9 @@ export default class Vec3 implements Vec {
   }
 
   public dist(v: Vec3): number {
-    let dx: number = pow(v.x - this.x, 2);
-    let dy: number = pow(v.y - this.y, 2);
-    let dz: number = pow(v.z - this.z, 2);
+    const dx: number = pow(v.x - this.x, 2);
+    const dy: number = pow(v.y - this.y, 2);
+    const dz: number = pow(v.z - this.z, 2);
     return sqrt(dx + dy + dz);
   }
 
@@ -83,8 +81,7 @@ export default class Vec3 implements Vec {
   }
 
   public normalize(): void {
-    let mag: number = this.mag();
-    this.div(mag);
+    this.div(this.mag());
   }
 
   public dot(v: Vec3): number {
@@ -126,7 +123,7 @@ export default class Vec3 implements Vec {
   }
 
   public toString(): string {
-    return `(x: ${this.x}, y: ${this.y}), z: ${this.z}`;
+    return `(x: ${this.x}, y: ${this.y}), z: ${this.z})`;
   }
 
   public isEqual(v: Vec3): boolean {
@@ -171,5 +168,9 @@ export default class Vec3 implements Vec {
 
   public static down(): Vec3 {
     return new Vec3(0, 1, 0);
+  }
+
+  public static zero(): Vec3 {
+    return new Vec3(0, 0, 0);
   }
 }

@@ -12,8 +12,6 @@
     "**/*.js.map": true
   },
   "editor.folding": true,
-  "editor.parameterHints": true,
-  "editor.autoClosingBrackets": true,
   "editor.minimap.enabled": true,
   "editor.minimap.renderCharacters": true,
   "editor.scrollBeyondLastLine": true,

@@ -1,8 +1,8 @@
 {
   "name": "vector2",
   "version": "0.0.1",
-  "description": "Vector classes",
-  "main": "dist/lib/Vector.js",
+  "description": "Vector library",
+  "main": "dist/src/Vector.js",
   "directories": {
     "test": "test"
   },
@@ -19,8 +19,15 @@
     "games",
     "vector2d",
     "vector2",
+    "vector3",
+    "vector3d",
+    "vector4",
+    "vector4d",
+    "vectors",
     "vector",
-    "2d"
+    "2d",
+    "linear algebra",
+    "rays"
   ],
   "author": "Brendon Conradie <brendoncon@gmail.com>",
   "license": "ISC",
