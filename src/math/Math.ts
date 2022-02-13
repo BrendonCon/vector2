@@ -1,0 +1,1 @@
+const { min, max, sqrt, abs, pow, random, atan2, sin, cos } = Math;

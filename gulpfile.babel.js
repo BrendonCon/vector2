@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import shell from 'gulp-shell';
 
 class Build {
-  constructor() {
+  init() {
     this._html();
     this._typescript();
     this._tests();
@@ -27,9 +27,7 @@ class Build {
   }
 
   _typescript() {
-    gulp.task('typescript', shell.task([
-      'tsc'
-    ]));
+    gulp.task('typescript', shell.task(['tsc']));
   }
 
   _build() {
@@ -42,8 +40,8 @@ class Build {
 
   _dist() {
     gulp.task('dist', () => {
-      gulp.src('src/lib/*.js')
-        .pipe(gulp.dest('dist/lib/'));
+      gulp.src('src/*.js')
+        .pipe(gulp.dest('dist/'));
     });
   }
 
@@ -57,9 +55,7 @@ class Build {
   }
 
   _default() {
-    gulp.task('default', [
-      'dev'
-    ]);
+    gulp.task('default', ['dev']);
   }
 
   _watch() {
@@ -72,3 +68,4 @@ class Build {
 }
 
 const build = new Build();
+build.init();

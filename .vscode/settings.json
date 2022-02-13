@@ -8,7 +8,8 @@
     "gulp": false,
     "dist": false,
     "src/**/*.js": true,
-    "spec/**/*.spec.js": true
+    "spec/**/*.spec.js": true,
+    "**/*.js.map": true
   },
   "editor.folding": true,
   "editor.parameterHints": true,
