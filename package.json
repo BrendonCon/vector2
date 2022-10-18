@@ -2,7 +2,7 @@
   "name": "vector2",
   "version": "0.0.1",
   "description": "A 2d vector class for games and physics simulations",
-  "main": "dist/lib/Vector2.js",
+  "main": "dist/Vector2.js",
   "directories": {
     "test": "test"
   },

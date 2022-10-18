@@ -63,6 +63,10 @@ export default class Vector2 {
     this.y = Math.sin(angle) * mag;
   }
 
+  public cross(v: Vector2): number {
+    return this.x * v.y - this.y * v.x;
+  }
+
   public getAngle(): number {
     return Math.atan2(this.y, this.x);
   }
@@ -125,6 +129,11 @@ export default class Vector2 {
   public negate(): void {
     this.x *= -1;
     this.y *= -1;
+  }
+
+  public one(): void {
+    this.x = 1;
+    this.y = 1;
   }
 
   public inverse(): Vector2 {

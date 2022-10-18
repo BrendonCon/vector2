@@ -40,8 +40,8 @@ class Build {
 
   _dist() {
     task('dist', () => {
-      src('src/lib/*.js')
-        .pipe(dest('dist/lib/'));
+      src('src/*.js')
+        .pipe(dest('dist/'));
     });
   }
 
