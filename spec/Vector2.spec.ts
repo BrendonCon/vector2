@@ -1,5 +1,5 @@
 
-import Vector2 from '../src/lib/Vector2';
+import Vector2 from '../src/Vector2';
 
 describe('Vector2', () => {
   let sut: Vector2;
