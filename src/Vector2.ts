@@ -2,7 +2,7 @@ export default class Vector2 {
   private _x: number;
   private _y: number;
 
-  constructor(x = 0, y = x) {
+  constructor(x: number = 0, y: number = x) {
     this.x = x;
     this.y = y;
   }
@@ -52,15 +52,13 @@ export default class Vector2 {
   }
 
   public dist(v: Vector2): number {
-    const distX: number = Math.pow(v.x - this.x, 2);
-    const distY: number = Math.pow(v.y - this.y, 2);
-    return Math.sqrt(distX + distY);
+    return Math.sqrt(Math.pow(v.x - this.x, 2) +  Math.pow(v.y - this.y, 2));
   }
 
-  public setAngle(angle: number): void {
+  public setAngle(theta: number): void {
     const mag: number = this.mag();
-    this.x = Math.cos(angle) * mag;
-    this.y = Math.sin(angle) * mag;
+    this.x = Math.cos(theta) * mag;
+    this.y = Math.sin(theta) * mag;
   }
 
   public cross(v: Vector2): number {
@@ -116,11 +114,6 @@ export default class Vector2 {
     return this.x === v.x && this.y === v.y;
   }
 
-  public zero(): void {
-    this.x = 0;
-    this.y = 0;
-  }
-
   public abs(): void {
     this.x = Math.abs(this.x);
     this.y = Math.abs(this.y);
@@ -131,13 +124,38 @@ export default class Vector2 {
     this.y *= -1;
   }
 
+  public zero(): void {
+    this.x = 0;
+    this.y = 0;
+  }
+
   public one(): void {
     this.x = 1;
     this.y = 1;
   }
 
-  public inverse(): Vector2 {
-    return new Vector2(this.x * -1, this.y * -1);
+  public up(): void {
+    this.x = 0;
+    this.y = 1;
+  }
+
+  public down(): void {
+    this.x = 0;
+    this.y = -1;
+  }
+
+  public left(): void {
+    this.x = -1;
+    this.y = 0;
+  }
+
+  public right(): void {
+    this.x = 1;
+    this.y = 0;
+  }
+
+  public static zero(): Vector2 {
+    return new Vector2(0);
   }
 
   public static left(): Vector2 {
@@ -154,5 +172,59 @@ export default class Vector2 {
 
   public static down(): Vector2 {
     return new Vector2(0, -1);
+  }
+
+  public static random(): Vector2 {
+    return new Vector2(Math.random(), Math.random());
+  }
+
+  public static distance(u: Vector2, v: Vector2) {
+    return Math.sqrt(Math.pow(v.x - u.x, 2) + Math.pow(v.y - u.y, 2));
+  }
+
+  public static lerp(u: Vector2, v: Vector2, t: number): Vector2 {
+    return new Vector2(u.x + (v.x - u.x) * t, u.y + (v.y - u.y) * t);
+  }
+
+  public static normalize(u: Vector2): Vector2 {
+    const v = (new Vector2(u.x, u.y));
+    v.normalize();
+    return v;
+  }
+
+  public static mag(u: Vector2): number {
+    return Math.sqrt(u.x * u.x + u.y * u.y)
+  }
+
+  public static max(u: Vector2, v: Vector2) {
+    return u.mag() > v.mag() ? u : v;
+  }
+
+  public static min(u: Vector2, v: Vector2) {
+    return u.mag() < v.mag() ? u : v;
+  }
+
+  public static dot(u: Vector2, v: Vector2): number {
+    return u.x * v.x + u.y * v.y;
+  }
+
+  public static create(x: number = 0, y: number = x): Vector2 {
+    return new Vector2(x, y);
+  }
+
+  public static add(u: Vector2, v: Vector2): Vector2 {
+    return new Vector2(u.x + v.x, u.y + v.y);
+  }
+
+  public static sub(u: Vector2, v: Vector2): Vector2 {
+    return new Vector2(u.x - v.x, u.y - v.y);
+  }
+
+  public static mult(u: Vector2, k: number): Vector2 {
+    return new Vector2(u.x * k, u.y * k);
+  }
+
+  public static div(u: Vector2, d: number): Vector2 {
+    return new Vector2(u.x / d, u.y / d);
   }
 }
