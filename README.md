@@ -51,7 +51,15 @@ When using the [Vector2](src/lib/Vector2.ts) class, you will have the following 
 | isEqual(v: Vector2): *boolean* |
 | zero(): *void* |
 | abs(): *void* |
-| |
+| negate(): *void* |
+| lerp(): *void* |
+| left(): *void* |
+| right(): *void* |
+| down(): *void* |
+| up(): *void* |
+| zero(): *void* |
+| min(): *Vector2* |
+| max(): *Vector2* |
 
 ## Folder Structure
 - [.vscode](.vscode): Visual Studio Code configs here

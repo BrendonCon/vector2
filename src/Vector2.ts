@@ -178,7 +178,7 @@ export default class Vector2 {
     return new Vector2(Math.random(), Math.random());
   }
 
-  public static distance(u: Vector2, v: Vector2) {
+  public static dist(u: Vector2, v: Vector2) {
     return Math.sqrt(Math.pow(v.x - u.x, 2) + Math.pow(v.y - u.y, 2));
   }
 
