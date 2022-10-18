@@ -187,7 +187,7 @@ export default class Vector2 {
   }
 
   public static normalize(u: Vector2): Vector2 {
-    const v = (new Vector2(u.x, u.y));
+    const v = new Vector2(u.x, u.y);
     v.normalize();
     return v;
   }
@@ -224,7 +224,7 @@ export default class Vector2 {
     return new Vector2(u.x * k, u.y * k);
   }
 
-  public static div(u: Vector2, d: number): Vector2 {
-    return new Vector2(u.x / d, u.y / d);
+  public static div(u: Vector2, k: number): Vector2 {
+    return new Vector2(u.x / k, u.y / k);
   }
 }
