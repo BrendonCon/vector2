@@ -240,21 +240,6 @@ describe('Vector2', () => {
     });
   });
 
-  describe('#cross', () => {
-    beforeEach(() => {
-      sut = new Vector2(5, 3);
-    });
-
-    it('should be defined', () => {
-      expect(sut.cross).toBeDefined();
-    });
-
-    it('should return the correct cross product', () => {
-      let actual: number = sut.cross(new Vector2(2, 3));
-      expect(actual).toEqual(9);
-    });
-  });
-
   describe('#random', () => {
     beforeEach(() => {
       sut = new Vector2(5, 3);

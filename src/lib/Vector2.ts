@@ -1,11 +1,8 @@
-
 export default class Vector2 {
-
   private _x: number;
-
   private _y: number;
 
-  constructor(x = 0, y = 0) {
+  constructor(x = 0, y = x) {
     this.x = x;
     this.y = y;
   }
@@ -55,13 +52,13 @@ export default class Vector2 {
   }
 
   public dist(v: Vector2): number {
-    let distX: number = Math.pow(v.x - this.x, 2);
-    let distY: number = Math.pow(v.y - this.y, 2);
+    const distX: number = Math.pow(v.x - this.x, 2);
+    const distY: number = Math.pow(v.y - this.y, 2);
     return Math.sqrt(distX + distY);
   }
 
   public setAngle(angle: number): void {
-    let mag: number = this.mag();
+    const mag: number = this.mag();
     this.x = Math.cos(angle) * mag;
     this.y = Math.sin(angle) * mag;
   }
@@ -77,10 +74,6 @@ export default class Vector2 {
 
   public dot(v: Vector2): number {
     return (this.x * v.x) + (this.y * v.y);
-  }
-
-  public cross(v: Vector2): number {
-    return (this.x * v.y) - (this.y * v.x);
   }
 
   public set(x: number, y: number): void {
@@ -103,14 +96,16 @@ export default class Vector2 {
   }
 
   public toArray(): number[] {
-    return [
-      this.x,
-      this.y
-    ];
+    return [ this.x, this.y ];
+  }
+
+  public lerp(v: Vector2, t: number): void {
+    this.x += t * (v.x - this.x);
+    this.y += t * (v.y - this.y);
   }
 
   public toString(): string {
-    return `(${this.x}, ${this.y})`;
+    return `{ x: ${this.x}, y: ${this.y} }`;
   }
 
   public isEqual(v: Vector2): boolean {
@@ -127,4 +122,28 @@ export default class Vector2 {
     this.y = Math.abs(this.y);
   }
 
+  public negate(): void {
+    this.x *= -1;
+    this.y *= -1;
+  }
+
+  public inverse(): Vector2 {
+    return new Vector2(this.x * -1, this.y * -1);
+  }
+
+  public static left(): Vector2 {
+    return new Vector2(-1, 0);
+  }
+
+  public static right(): Vector2 {
+    return new Vector2(1, 0);
+  }
+
+  public static up(): Vector2 {
+    return new Vector2(0, 1);
+  }
+
+  public static down(): Vector2 {
+    return new Vector2(0, -1);
+  }
 }

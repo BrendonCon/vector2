@@ -28,7 +28,7 @@
     "@types/jasmine": "^2.5.47",
     "typings": "^2.1.0",
     "babel-preset-es2015": "^6.24.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-shell": "^0.6.3",
     "typescript": "^2.2.2",
     "jasmine-es6": "^0.4.0"
